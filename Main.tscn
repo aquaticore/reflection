@@ -44,5 +44,5 @@ dash_speed = 3000.0
 y_dash_factor = 0.7
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 32.9942, 9.09131, 0 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 32.994, 0, 0 )
 script = ExtResource( 2 )
