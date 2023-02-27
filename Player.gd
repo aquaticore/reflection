@@ -69,3 +69,6 @@ func _process(delta):
 		if dash_timer > dash_time:
 			dashing = false
 			dash_timer = 0.0
+	
+	$MirrorMesh.transform.origin.y = self.transform.origin.y * -2
+

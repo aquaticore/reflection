@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Camera.gd" type="Script" id=2]
+[ext_resource path="res://Mirrored.gd" type="Script" id=3]
 
 [sub_resource type="PhysicsMaterial" id=1]
 
@@ -14,24 +15,13 @@
 [node name="Main" type="Node"]
 
 [node name="Ground" type="StaticBody" parent="."]
-transform = Transform( 1.77454, 0, 0, 0, 1.77454, 0, 0, 0, 39.4535, 0, -1.34618, -31.1198 )
+transform = Transform( 1.775, 0, 0, 0, 0.1, 0, 0, 0, 39.453, 0, 0, -31.12 )
 physics_material_override = SubResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Ground"]
 shape = SubResource( 2 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Ground"]
-mesh = SubResource( 3 )
-skin = SubResource( 4 )
-
-[node name="Ground2" type="StaticBody" parent="."]
-transform = Transform( 1.77454, 0, 0, 0, 1.77454, 0, 0, 0, 13.9215, -0.363724, 9.33401, -34.3568 )
-physics_material_override = SubResource( 1 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Ground2"]
-shape = SubResource( 2 )
-
-[node name="MeshInstance" type="MeshInstance" parent="Ground2"]
 mesh = SubResource( 3 )
 skin = SubResource( 4 )
 
@@ -46,3 +36,17 @@ y_dash_factor = 0.7
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 32.994, 0, 0 )
 script = ExtResource( 2 )
+
+[node name="Mirrored" type="Node" parent="."]
+script = ExtResource( 3 )
+
+[node name="Ground2" type="StaticBody" parent="Mirrored"]
+transform = Transform( 1.77454, 0, 0, 0, 1.77454, 0, 0, 0, 13.9215, -0.363724, 9.33401, -34.3568 )
+physics_material_override = SubResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Mirrored/Ground2"]
+shape = SubResource( 2 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Mirrored/Ground2"]
+mesh = SubResource( 3 )
+skin = SubResource( 4 )
