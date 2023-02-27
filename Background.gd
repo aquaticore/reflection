@@ -20,18 +20,9 @@ func _ready():
 			clonedCube.transform.origin.y = y
 			
 			# set rotation
-			#clonedCube.transform = clonedCube.transform.rotated(
-				#Vector3(1, 0, 0),
-				#rng.randf_range(0, 90)
-			#)
-			#clonedCube.transform = clonedCube.transform.rotated(
-				#Vector3(0, 1, 0),
-				#rng.randf_range(0, 90)
-			#)
-			#clonedCube.transform = clonedCube.transform.rotated(
-				#Vector3(0, 0, 1),
-				#rng.randf_range(0, 90)
-			#)
+			clonedCube.rotation_degrees.x = rng.randf_range(0, 90)
+			clonedCube.rotation_degrees.y = rng.randf_range(0, 90)
+			clonedCube.rotation_degrees.z = rng.randf_range(0, 90)
 			
 			# set size
 			clonedCube.transform = clonedCube.transform.scaled(Vector3(
