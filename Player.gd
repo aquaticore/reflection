@@ -36,7 +36,7 @@ func dash_pressed():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_pressed("dash") and can_dash and dashing == false:
+	if Input.is_action_just_pressed("dash") and can_dash and dashing == false and (direction.x != 0 or direction.y != 0):
 		dash_pressed()
 	
 	if !dashing:
@@ -71,4 +71,3 @@ func _process(delta):
 			dash_timer = 0.0
 	
 	$MirrorMesh.transform.origin.y = self.transform.origin.y * -2
-
