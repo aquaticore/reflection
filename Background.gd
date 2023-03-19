@@ -2,12 +2,13 @@ extends Node
 
 export var cube: PackedScene
 
-var wallSize = 100
+var wallSizeZ = 100
+var wallSizeY = 30
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	for z in range(wallSize):
-		for y in range(wallSize):
+	for z in range(wallSizeZ):
+		for y in range(wallSizeY):
 			var rng = RandomNumberGenerator.new()
 			rng.randomize()
 			
@@ -16,6 +17,7 @@ func _ready():
 			self.add_child(clonedCube)
 			
 			# set position
+			clonedCube.transform.origin.z = -5
 			clonedCube.transform.origin.z = z
 			clonedCube.transform.origin.y = y
 			
