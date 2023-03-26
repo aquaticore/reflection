@@ -17,9 +17,9 @@ func _ready():
 			self.add_child(clonedCube)
 			
 			# set position
-			clonedCube.transform.origin.z = -5
-			clonedCube.transform.origin.z = z
+			clonedCube.transform.origin.x = -10
 			clonedCube.transform.origin.y = y
+			clonedCube.transform.origin.z = z - (wallSizeZ/2)
 			
 			# set rotation
 			clonedCube.rotation_degrees.x = rng.randf_range(0, 90)
