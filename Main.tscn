@@ -23,6 +23,7 @@ physics_material_override = SubResource( 1 )
 shape = SubResource( 2 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Ground"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 29.4619, 0, 0, 0 )
 mesh = SubResource( 3 )
 skin = SubResource( 4 )
 
@@ -50,6 +51,18 @@ physics_material_override = SubResource( 1 )
 shape = SubResource( 2 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Mirrored/Ground2"]
+mesh = SubResource( 3 )
+skin = SubResource( 4 )
+
+[node name="Ground3" type="StaticBody" parent="Mirrored"]
+transform = Transform( 1.77454, 0, 0, 0, 1.77454, 0, 0, 0, 13.9215, -0.363724, 23.6102, -9.82405 )
+physics_material_override = SubResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Mirrored/Ground3"]
+shape = SubResource( 2 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Mirrored/Ground3"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 mesh = SubResource( 3 )
 skin = SubResource( 4 )
 

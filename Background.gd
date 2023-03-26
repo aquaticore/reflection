@@ -3,7 +3,7 @@ extends Node
 export var cube: PackedScene
 
 var wallSizeZ = 100
-var wallSizeY = 30
+var wallSizeY = 50
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -18,7 +18,7 @@ func _ready():
 			
 			# set position
 			clonedCube.transform.origin.x = -10
-			clonedCube.transform.origin.y = y
+			clonedCube.transform.origin.y = y - (wallSizeY/2)
 			clonedCube.transform.origin.z = z - (wallSizeZ/2)
 			
 			# set rotation
