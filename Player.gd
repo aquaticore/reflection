@@ -1,7 +1,8 @@
 extends KinematicBody
 
-var speed = 60
-var jump_power = 40
+var speed = 70
+var deceleration = 0.9
+var jump_power = 50
 var gravity = 90
 var velocity = Vector3.ZERO
 var direction = Vector2.ZERO
@@ -28,6 +29,8 @@ func get_direction():
 		direction.y -= 1
 	if Input.is_action_pressed("up"):
 		direction.y += 1
+	if not (not Input.is_action_pressed("left") or not Input.is_action_pressed("right")):
+		velocity.x *= deceleration
 
 func dash_pressed():
 	dashing = true

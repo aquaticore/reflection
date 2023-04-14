@@ -18,22 +18,35 @@
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.69774, 0 )
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 129.33, 0, 0 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 75, 0, 0 )
+projection = 1
+current = true
 fov = 66.0
-far = 532.6
+size = 130.0
 script = ExtResource( 2 )
 
 [node name="Mirrored" type="Node" parent="."]
 script = ExtResource( 3 )
 
 [node name="Ground2" type="StaticBody" parent="Mirrored"]
-transform = Transform( 1.77454, 0, 0, 0, 1.77454, 0, 0, 0, 13.9215, -0.363724, 9.33401, -34.3568 )
+transform = Transform( 1.775, 0, 0, 0, 0.5, 0, 0, 0, 10, 0, 9.334, -34.357 )
 physics_material_override = SubResource( 1 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Mirrored/Ground2"]
 shape = SubResource( 2 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Mirrored/Ground2"]
+mesh = SubResource( 3 )
+skin = SubResource( 4 )
+
+[node name="Ground3" type="StaticBody" parent="Mirrored"]
+transform = Transform( 1.775, 0, 0, 0, 0.5, 0, 0, 0, 10, 0, 17.1319, -50.9422 )
+physics_material_override = SubResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Mirrored/Ground3"]
+shape = SubResource( 2 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Mirrored/Ground3"]
 mesh = SubResource( 3 )
 skin = SubResource( 4 )
 
